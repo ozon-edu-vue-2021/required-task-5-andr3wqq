@@ -1,14 +1,28 @@
 <template>
   <div id="app">
+      <h1>Корзина</h1>
+      <hr>
+      <ShoppingCart/>
+      <hr>
+      <h2>Список продуктов</h2>
+      <ProductList/>
+      <hr>
+      <h2>Список избранных продуктов</h2>
+      <FavouriteProductList/>
   </div>
 </template>
 
 <script>
+import ProductList from './ProductList.vue'
+import FavouriteProductList from './FavouriteProductList.vue'
+import ShoppingCart from './ShoppingCart.vue'
 
 export default {
   name: "App",
   components: {
-    Form,
+      ProductList,
+      FavouriteProductList,
+      ShoppingCart
   },
 };
 </script>
