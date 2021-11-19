@@ -1,11 +1,14 @@
 <template>
-    <section class="products-container">
-        <Product v-for="product in products"
-             :key="product.uid"
-             :product="product"
-        ></Product>
-        <p v-if="!products.length">Загрузка...</p>
-    </section>
+    <div>
+        <h1>Список продуктов</h1>
+        <section class="products-container">
+            <Product v-for="product in products"
+                 :key="product.uid"
+                 :product="product"
+            ></Product>
+            <p v-if="!products.length">Загрузка...</p>
+        </section>
+    </div>
 </template>
 
 <script>
@@ -18,10 +21,7 @@ export default {
     },
     computed: mapState({
         products: state => state.products.all
-    }),
-    created () {
-        this.$store.dispatch('products/getAllProducts')
-    }
+    })
 }
 </script>
 

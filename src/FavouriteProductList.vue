@@ -1,11 +1,15 @@
 <template>
-    <section class="products-container">
-        <Product v-for="product in products"
-             :key="product.uid"
-             :product="product"
-        ></Product>
-        <p v-if="!products.length">Вы ещё ничего не добавили в избранное.</p>
-    </section>
+    <div class="favourite">
+        <h1>Список избранных продуктов</h1>
+        <hr>
+        <section class="products-container">
+            <Product v-for="product in products"
+                 :key="product.uid"
+                 :product="product"
+            ></Product>
+            <p v-if="!products.length">Вы ещё ничего не добавили в избранное.</p>
+        </section>
+    </div>
 </template>
 
 <script>

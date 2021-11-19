@@ -11,11 +11,13 @@ const getters = {
   cartProducts: (state, getters, rootState) => {
     return state.items.map(({ id, quantity }) => {
       const product = rootState.products.all.find(product => product.id === id)
-      return {
-        id: product.id,
-        ingredient: product.ingredient,
-        price: product.price,
-        quantity
+      if (product) {
+        return {
+          id: product.id,
+          ingredient: product.ingredient,
+          price: product.price,
+          quantity
+        }
       }
     })
   },

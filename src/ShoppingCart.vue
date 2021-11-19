@@ -1,10 +1,10 @@
 <template>
     <div class="cart">
-        <h2>Корзина</h2>
-        <p v-show="!products.length">
+        <h1>Корзина</h1>
+        <p v-if="!products.length">
             <i>Пожалуйста, добавьте товары в корзину.</i>
         </p>
-        <ul>
+        <ul v-else>
             <li v-for="product in products" :key="product.uid">
                 <div>
                     {{ product.ingredient }} - {{ product.price }} ₽ x {{ product.quantity }}
